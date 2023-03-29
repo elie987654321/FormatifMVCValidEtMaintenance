@@ -1,8 +1,18 @@
-package Controller;
+package Controlleur;
 
-import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Tab;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-public class MainController {
+import static javafx.application.Application.launch;
+
+public class MainController extends Application {
     /*Scanner scanner = new Scanner(System.in);
     String rejouer = "";
 
@@ -106,6 +116,29 @@ public class MainController {
 
     }
         while (rejouer.equals("o"));
-
-}
 */
+
+    public void start(Stage primaryStage) throws Exception
+    {
+        primaryStage.setTitle("Jeu du 21");
+
+        FXMLLoader loaderBackGround = new FXMLLoader(getClass().getResource("../Vue/FXML/BackGroundPane.fxml"));
+        FXMLLoader loaderCarte = new FXMLLoader(getClass().getResource("../Vue/FXML/Carte.fxml"));
+        Parent parent = loaderBackGround.load();
+
+        GridPane container = (GridPane) parent.lookup("#GrilleCarteJoueur");
+
+        container.add(loaderCarte.load(),1,1);
+
+
+        Scene scene = new Scene(parent, 1400, 1000);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+

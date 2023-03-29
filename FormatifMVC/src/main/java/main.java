@@ -1,4 +1,4 @@
-import Controller.Partie;
+import Controlleur.Partie;
 
 import java.util.Scanner;
 
@@ -21,10 +21,13 @@ public class main {
             for (int i = 0; i < partie.getBanquier().getMainDu21().size(); i++) {
                 System.out.println(i+1+" - "+partie.getBanquier().getMainDu21().get(i));
             }
-            if (partie.getBanquier().getPoints() > 21){
-                System.out.println("valeur du jeu 21: "+ partie.getBanquier().getPoints()+ " -> "+ "21 est depassé.\n");
-            }else {
-                System.out.println("valeur du jeu 21: "+ partie.getBanquier().getPoints()+ " -> "+ (21 - partie.getBanquier().getPoints())+ " pour depasser.\n");
+            if (partie.getBanquier().getPoints() > 21)
+            {
+                System.out.println("valeur du jeu 21: "+ partie.getBanquier().getPoints() + " -> "+ "21 est depassé.\n");
+            }
+            else
+            {
+                System.out.println("valeur du jeu 21: "+ partie.getBanquier().getPoints() + " -> "+ (21 - partie.getBanquier().getPoints())+ " pour depasser.\n");
             }
 
             // Premieres cartes du joueur

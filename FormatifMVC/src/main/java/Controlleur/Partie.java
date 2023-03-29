@@ -1,4 +1,4 @@
-package Controller;
+package Controlleur;
 
 import Model.Joueur;
 import Model.Paquet;
